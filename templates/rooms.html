@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<input type="hidden" id="current_user" value="{{user}}">
+<input type="hidden" id="current_user_id" value={{user_id}}>
+<input type="hidden" id="current_room_id">
+
+<div class="shadow p-4 mb-4 bg-white">
+    <div class="clearfix">
+        <div class="float-left">
+            <a href="/" class="btn btn-dark btn-sm" role="button" id="logout">Logout</a><br>
+            <a href="/rooms/{{user}}/{{user_id}}" class="btn btn-dark btn-sm mt-1" role="button">Refresh</a>
+        </div>
+        <div class="float-right">
+            <button class="btn btn-danger btn-sm mb-1" data-toggle="modal" data-target="#create_room">
+                Create room
+            </button><br>
+            <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#show_rooms">
+                Show rooms
+            </button>
+        </div>
+    </div>
+    <div id="chat_header" class="mt-3">
+        <div class="alert alert-success alert-dismissible text-center mt-3">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            Hello {{ user }}!
+        </div>
+    </div>
+
+    <!-- includes html codes for modals -->
+    {% include 'includes/_show_rooms.html' %}   
+    {% include 'includes/_create_room.html' %}   
+
+    <div id="chat_box" class="border p-3 my-3" style="height: 300px;overflow: auto;">
+        <div class="text-center mt-2">
+            <p>Please refresh the page.</p>
+        </div>
+    </div>
+    <div class="input-group mb-3" id="input_group">
+        <input type="text" class="form-control" placeholder="Some text" id="send_message">
+        <div class="input-group-append">
+            <button class="btn btn-outline-primary" type="button" id="send">Send</button>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block script %}
+<script src="//cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js" integrity="sha256-yr4fRk/GU1ehYJPAs8P4JlTgu0Hdsp4ZKrx8bDEDC3I=" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+{% endblock %}
