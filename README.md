@@ -6,9 +6,9 @@ App link ---> https://mb-chat-rooms.herokuapp.com/
 
 ### How to run
 ```
-1. run git clone https://github.com/markbirds/Flask-Chat-Rooms.git
-2. Install Postgresql and create database named ChatRoomDB in pgAdmin
-3. run pip install -r requirements.txt
+1. git clone https://github.com/markbirds/Flask-Chat-Rooms.git
+2. install postgresql and create database named ChatRoomDB in pgAdmin
+3. pip install -r requirements.txt
 4. run this in the project root directory
 
 python
@@ -17,7 +17,7 @@ python
 >>>exit()
 
 5. change ENV to 'Development'
-6. run python app.py
+6. python app.py
 ```
 
 This project is licensed under the terms of [MIT License](LICENSE)
