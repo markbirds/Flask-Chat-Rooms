@@ -9,7 +9,7 @@ App link ---> https://mb-chat-rooms.herokuapp.com/
 1. run git clone https://github.com/markbirds/Flask-Chat-Rooms.git
 2. Install Postgresql and create database named ChatRoomDB in pgAdmin
 3. run pip install -r requirements.txt
-4. run this in current dir
+4. run this in the project root directory
 
 python
 >>>from app import db
