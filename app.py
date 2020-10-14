@@ -1,6 +1,8 @@
 from flask import Flask, render_template, request, redirect, url_for
 from flask_socketio import SocketIO, send, emit, join_room, leave_room
 from flask_sqlalchemy import SQLAlchemy
+from flask_script import Manager
+from flask_migrate import Migrate, MigrateCommand
 import random
 import string
 
@@ -20,6 +22,10 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = 'FALSE'
 
 socketio = SocketIO(app)
 db = SQLAlchemy(app)
+migrate = Migrate(app, db)
+
+manager = Manager(app)
+manager.add_command('db', MigrateCommand)
 
 class Rooms(db.Model):
     room_id = db.Column(db.Integer, primary_key=True)

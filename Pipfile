@@ -13,6 +13,8 @@ flask-sqlalchemy = "*"
 psycopg2 = "*"
 psycopg2-binary = "*"
 gunicorn = "*"
+flask-migrate = "*"
+flask-script = "*"
 
 [requires]
 python_version = "3.8"
