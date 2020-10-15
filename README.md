@@ -10,10 +10,9 @@ App link ---> https://mb-chat-rooms.herokuapp.com/
 2. install postgresql and create database named ChatRoomDB in pgAdmin
 3. pipenv shell
 4. pipenv install -r requirements.txt
-5. change ENV to 'Development'
-6. flask db migrate
-7. flask db upgrade
-6. flask run
+5. flask db migrate
+6. flask db upgrade
+7. flask run
 ```
 
 This project is licensed under the terms of [MIT License](LICENSE)
