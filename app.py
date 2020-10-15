@@ -8,14 +8,11 @@ import string
 
 app = Flask(__name__)
 
-ENV = 'Production'
+ENV = 'Development'
 
 if ENV == 'Development':
     app.debug = True
     app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://postgres:postgres@localhost/ChatRoomDB"
-else:  
-    app.debug = False
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://bpyuoqrjyffgjc:6585b8522dabfb4901adb617201ab027a9d75e21b6df483bc9deda4da1ab9f02@ec2-3-95-87-221.compute-1.amazonaws.com:5432/d2ioeav6764hmi'
 
 app.config['SECRET_KEY'] = 'secret!'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = 'FALSE'
